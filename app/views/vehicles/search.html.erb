@@ -1,0 +1,16 @@
+
+<form>
+search vehicle:
+
+<input type ="text" name="query"  value="<%=@query %>"/>
+<input type ="submit"  value="make" />
+</form>
+
+</br>
+
+<% if @vehicles %>
+ <% @vehicles.each do |vehicle| %>
+ <p><%=vehicle.make %></p>
+ 
+<% end %> 
+<% end %>
