@@ -11,7 +11,8 @@ search vehicle:
 
 <% if @vehicles %>
  <% @vehicles.each do |vehicle| %>
- <p><%=vehicle.model %></p>
+<p> <%= str=vehicle.model.upcase %> </p>
+ 
  
 <% end %> 
 <% end %>

@@ -10,7 +10,7 @@ search vehicle:
 
 <% if @vehicles %>
  <% @vehicles.each do |vehicle| %>
- <p><%=vehicle.make %></p>
+ <p><%=vehicle.make.upcase %></p>
  
 <% end %> 
 <% end %>
