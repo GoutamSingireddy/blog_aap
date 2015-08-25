@@ -17,7 +17,7 @@ default: &default
  username: sql587534
  password: rM4*dE2!
  host: sql5.freemysqlhosting.net
- port nmuber: 3306
+ port: 3306
 
 development:
  <<: *default
