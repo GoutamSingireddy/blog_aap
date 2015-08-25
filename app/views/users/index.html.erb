@@ -34,6 +34,14 @@
   </tbody>
 </table>
 
+
+<br>
+<select name="user_obj_name">
+<% @users.each do |user|%>
+<option value ="<% user.id %>"><%= user.name%></option>
+<% end %>
+</select>
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'New User', new_user_path %><br>
+<a href="/search?index">search</a>

@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   resources :posts
   resources :users
   get '/search' => 'vehicles#search'
-  get '/make' => 'vehicles#make'
-  get '/model' => 'vehicles#model'
+ 
+ # get '/make' => 'vehicles#make'
+  #get '/model' => 'vehicles#model'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

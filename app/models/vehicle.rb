@@ -1,4 +1,15 @@
 class Vehicle < ActiveRecord::Base
   belongs_to :user
   validates :make, :model, presence: true
-end
+
+  
+  before_create :capitalize
+  
+  def capitalize
+    self.make = make.upcase 
+	self.model = model.upcase
+  end
+  end
+
+  
+  

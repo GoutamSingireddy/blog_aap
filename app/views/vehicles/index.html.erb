@@ -13,6 +13,7 @@
   </thead>
 
   <tbody>
+  
     <% @vehicles.each do |vehicle| %>
       <tr>
         <td><%= vehicle.make %></td>
@@ -27,5 +28,9 @@
 </table>
 
 <br>
-
+<select name="vehicle_obj_name">
+<% @vehicles.each do |vehicle|%>
+<option value ="<% vehicle.id %>"><%= vehicle.make%></option>
+<% end %>
+</select>
 <%= link_to 'New Vehicle', new_vehicle_path %>

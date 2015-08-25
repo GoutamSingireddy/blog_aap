@@ -14,6 +14,7 @@ class VehiclesController < ApplicationController
 
   # GET /vehicles/new
   def new
+   
     @vehicle = Vehicle.new(user_id: params[:user_id])
 	@users = User.all.map{|u| [u.name, u.id]}
   end
@@ -62,19 +63,25 @@ class VehiclesController < ApplicationController
     end
   end
   
-  def make
+  def search
     if params[:query]
-	@query =params[:query]
-	@vehicles = Vehicle.where("make like ?", '%'+params[:query]+'%')
+	#@query =params[:query]
+	#@query =params[:query]
+	@vehicles = Vehicle.where("make like ?", '%'+params[:query]+'%') 
+
+	elsif params[:query2]
+	@vehicles= Vehicle.where("model like ?", '%'+params[:query2]+'%')
+	
+	
 	end
   end
   
-  def model
-  if params[:query]
-	@query =params[:query]
-	@vehicles = Vehicle.where("model like ?", '%'+params[:query]+'%')
-  end
-  end
+  #def model
+  #if params[:query]
+	#@query =params[:query]
+	#@vehicles = Vehicle.where("model like ?", '%'+params[:query]+'%')
+ # end
+  #end
 
   private
     # Use callbacks to share common setup or constraints between actions.
