@@ -4,7 +4,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles
   # GET /vehicles.json
   def index
-    @vehicles = Vehicle.all
+    @vehicles = Vehicle.search(params[:search]).all
   end
 
   # GET /vehicles/1
@@ -63,25 +63,25 @@ class VehiclesController < ApplicationController
     end
   end
   
-  def search
-    if params[:query]
+  # def search
+    # if params[:query]
 	#@query =params[:query]
 	#@query =params[:query]
-	@vehicles = Vehicle.where("make like ?", '%'+params[:query]+'%') 
+	# @vehicles = Vehicle.where("make like ? OR model like ?", '%'+params[:query]+'%', '%'+params[:query2]+'%') 
 
-	elsif params[:query2]
-	@vehicles= Vehicle.where("model like ?", '%'+params[:query2]+'%')
+	# elsif params[:query2]
+	# @vehicles= Vehicle.where("model like ?", '%'+params[:query2]+'%')
 	
 	
-	end
-  end
+	# end
+  # end
   
-  #def model
-  #if params[:query]
+  def search
+  if params[:query]
 	#@query =params[:query]
-	#@vehicles = Vehicle.where("model like ?", '%'+params[:query]+'%')
- # end
-  #end
+	@vehicles = Vehicle.where("model like ? OR model like ?", '%'+params[:query]+'%', '%'+params[:query]+'%' )
+ end
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

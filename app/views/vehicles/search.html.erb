@@ -8,7 +8,7 @@ make:
 <input type ="text" name="query" />
  
 model:
-<input type ="text" name="query2" />
+<input type ="text" name="query" />
 <input type ="submit"  value="search" />
 </form>
 
@@ -16,8 +16,8 @@ model:
 
 <% if @vehicles %>
  <% @vehicles.each do |vehicle| %>
- <p><%= vehicle.make %></p>
- <p> <%= vehicle.model %> </p>
+ <p><%= vehicle.make or model %></p>
+ 
  
 
  
